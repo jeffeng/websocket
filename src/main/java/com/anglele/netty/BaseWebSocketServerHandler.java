@@ -27,10 +27,15 @@ public abstract class BaseWebSocketServerHandler extends SimpleChannelInboundHan
      */
     public static void push(String userId, String message) {
         Global.pushCtxMap.forEach((k, v) -> {
-            if (userId.equals(k.split("-")[0])) {
-                TextWebSocketFrame tws = new TextWebSocketFrame(message);
-                v.channel().writeAndFlush(tws);
+            try {
+                if (userId.equals(k.split("-")[0])) {
+                    TextWebSocketFrame tws = new TextWebSocketFrame(message);
+                    v.channel().writeAndFlush(tws);
+                }
+            } catch (Exception e) {
+                System.out.println("=====>推送参数错误");
             }
+
         });
     }
 
