@@ -15,6 +15,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Properties;
 
 /**
@@ -27,6 +29,17 @@ public class Init {
             AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(LocalConfig.class);
             RedisMessage redisMessage = context.getBean(RedisMessage.class);
             System.out.println("服务启动成功!");
+
+//            new JobService("testWebsocket", "0/5 * * * * ?") {
+//                @Override
+//                public void execute() {
+//                    HashMap<String, String> map = new HashMap<String, String>();
+//                    map.put("id", "itiucinjr2j");
+//                    map.put("message", new Date().toString());
+//                    redisMessage.push("WEB_SCOKET", JSON.toJSONString(map));
+//                }
+//            };
+
             new JobService(redisMessage, Constant.WEB_SOCKET_KEY, Constant.WEB_SOCKET_EXECUTE_CRON, Constant.WEB_SOCKET_EXECUTE_TIMES) {
                 @Override
                 public void execute() {
