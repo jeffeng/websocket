@@ -34,9 +34,9 @@ REDIS_MAX_WAIT=10000
 
 REDIS_TIMEOUT=10000
 
-JKS_PATH=JKS证书所在的路径
+JKS_PATH=JKS 证书所在的路径
 
-JKS_PSD=证书密码
+JKS_PSD=netty123 证书密码
 
 WEB_SOCKET_PORT=websocket端口号
 
@@ -50,5 +50,9 @@ WEB_SOCKET_KEY=WEB_SCOKET redis的key
 
 # 客户端访问websocket地址
 wss://服务器地址:端口号/ws
+
+# 证书生成
+keytool -genkey -alias wss -keyalg RSA -keysize 1024 -keystore wss.jks -validity 365 -keypass netty123 -storepass netty123
+
 
   
