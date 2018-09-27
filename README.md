@@ -1,11 +1,11 @@
 # websocket
 netty-websocket
 
-#说明
+# 说明
 netty实现websocket，通过配置文件来启动,使用该websocket需要有redis消息队列进行支撑，支持ws
 以及wss
 
-#启动项目
+# 启动项目
 1.拉取代码后，通过maven install生成编译文件
 
 2.将lib包以及websocket-1.0.jar放入服务器任意目录,比如/usr/local/websocket
@@ -15,7 +15,7 @@ netty实现websocket，通过配置文件来启动,使用该websocket需要有re
 4.修改websocket.properties配置文件
 
 
-#配置文件说明
+# 配置文件说明
 DB_ENTRY=1：表示redis密码已经加密 0:表示redis密码没有加密，第一次运行请将DB_ENTRY=0
 
 REDIS_HOST=redis服务器地址
@@ -48,7 +48,7 @@ WEB_SOCKET_EXECUTE_CRON=0/5 * * * * ? redis每隔多少秒执行消息
 
 WEB_SOCKET_KEY=WEB_SCOKET redis的key
 
-#客户端访问websocket地址
+# 客户端访问websocket地址
 wss://服务器地址:端口号/ws
 
   
