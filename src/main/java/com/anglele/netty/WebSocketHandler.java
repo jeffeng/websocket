@@ -115,7 +115,7 @@ public class WebSocketHandler extends ChannelInboundHandlerAdapter {
 
     //第一次请求是http请求，请求头包括ws的信息
     public void handleHttpRequest(ChannelHandlerContext ctx, FullHttpRequest req) {
-        if (!req.decoderResult().isSuccess()) {
+        if (!req.decoderResult().isSuccess() || !"websocket".equals(req.headers().get("Upgrade")) ) {
             sendHttpResponse(ctx, req, new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST));
             return;
         }
