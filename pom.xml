@@ -58,7 +58,7 @@
         <springframework.version>4.3.17.RELEASE</springframework.version>
         <spring-data-commons.version>1.13.3.RELEASE</spring-data-commons.version>
         <spring-data-jpa.version>1.11.3.RELEASE</spring-data-jpa.version>
-        <jackson.version>2.5.0</jackson.version>
+        <jackson.version>2.12.7.1</jackson.version>
         <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
         <slf4j-log4j12.version>1.7.25</slf4j-log4j12.version>
         <fastjson.version>1.2.32</fastjson.version>
